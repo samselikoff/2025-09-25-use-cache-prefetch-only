@@ -1,9 +1,8 @@
-import { SecondsSince } from '@/app/seconds-since';
 import { Suspense } from 'react';
 
 type Params = PageProps<'/product/[id]'>['params'];
 
-export default function Page({ params }: { params: Params }) {
+export default async function Page({ params }: { params: Params }) {
   return (
     <Suspense fallback="Loading...">
       <Product params={params} />
@@ -18,9 +17,9 @@ async function Product({ params }: { params: Params }) {
   return (
     <div>
       <p>{product.title}</p>
-      <p>
+      {/* <p>
         <SecondsSince timestamp={product.fetchedAt} /> seconds ago
-      </p>
+      </p> */}
     </div>
   );
 }

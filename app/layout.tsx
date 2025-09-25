@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Link from 'next/link';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -22,7 +23,9 @@ export default function RootLayout({
           <Link href="/product/3">Product 3</Link>
         </nav>
 
-        <div className="p-4">{children}</div>
+        <Suspense fallback="Loading">
+          <div className="p-4">{children}</div>
+        </Suspense>
       </body>
     </html>
   );
