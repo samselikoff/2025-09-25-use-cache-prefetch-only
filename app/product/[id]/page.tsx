@@ -1,3 +1,4 @@
+import { unstable_cacheLife } from 'next/cache';
 import { Suspense } from 'react';
 
 type Params = PageProps<'/product/[id]'>['params'];
@@ -18,10 +19,12 @@ async function Product({ params }: { params: Params }) {
 
 async function getProduct(id: string) {
   'use cache';
+  // unstable_cacheLife('minutes');
   await new Promise((resolve) => setTimeout(resolve, 500));
+  const date = new Date();
 
   return {
     id,
-    title: `Product Title ${id}`,
+    title: `Product ${id}: Fetched at ${date}`,
   };
 }
