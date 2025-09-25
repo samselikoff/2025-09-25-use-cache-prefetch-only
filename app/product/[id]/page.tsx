@@ -27,7 +27,6 @@ async function Product({ params }: { params: Params }) {
 
 async function getProduct(id: string) {
   'use cache';
-  // unstable_cacheLife('minutes');
   await new Promise((resolve) => setTimeout(resolve, 500));
 
   return {
