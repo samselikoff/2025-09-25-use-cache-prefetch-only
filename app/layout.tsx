@@ -23,9 +23,9 @@ export default function RootLayout({
           <Link href="/product/3">Product 3</Link>
         </nav>
 
-        <Suspense fallback="Loading">
-          <div className="p-4">{children}</div>
-        </Suspense>
+        {/* <Suspense fallback="Loading"> */}
+        <div className="p-4">{children}</div>
+        {/* </Suspense> */}
       </body>
     </html>
   );
